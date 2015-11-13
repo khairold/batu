@@ -6,6 +6,10 @@
     "clean": "rimraf dist",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
+    "buildwindows:env": "SET NODE_ENV=production",
+    "buildwindows:webpack": "webpack --config webpack.config.prod.js",
+    "buildwindows": "npm run clean && npm run buildwindows:env && npm run buildwindows:webpack",
+    "universal": "node preserver.js",
     "start": "node devServer.js",
     "lint": "eslint src"
   },
@@ -49,6 +53,8 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
+    "babel": "^6.1.18",
+    "express": "^4.13.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
